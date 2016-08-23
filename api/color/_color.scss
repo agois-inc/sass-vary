@@ -1,7 +1,7 @@
-@import 'from-hex';
-@import 'from-hsl';
-@import 'from-rgb';
-@import 'hex-to-dec';
+@import 'helpers/from-hex';
+@import 'helpers/from-hsl';
+@import 'helpers/from-rgb';
+@import 'helpers/hex-to-dec';
 
 /// Convert to color
 /// @param {*} $value - value to cast
