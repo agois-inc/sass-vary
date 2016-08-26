@@ -169,10 +169,11 @@ $vary-loop-map: $vary-map;
 /// @param {String} $entity - Name of the entity you want to access
 ///
 /// @example scss
-///   vary-get-color('color-primary', user);
-///   // -> #333
-///
-/// @returns {Color} Value of key converted to a Color for that entity
+//   vary-get-color('color-primary', user);
+//   // -> #333
+//
+// @returns {Color} Value of key converted to a Color for that entity
+
 @function vary-get-color($key, $entity: $vary-loop-entity, $map: $vary-loop-map) {
   $entity-map: map-get($map, $entity);
 
@@ -186,7 +187,7 @@ $vary-loop-map: $vary-map;
     @error 'The entity `#{$entity}` doesn\'t have a value for `#{$key}`.';    
   }
   
-  $ret-color: to-color(unquote($ret));
+  $ret-color: to-color($ret);
 
   @if $ret-color != null {
     @return $ret-color;
@@ -214,6 +215,7 @@ $vary-loop-map: $vary-map;
          // )
 ///
 /// @returns {Map} Value of key converted to a List for that entity
+
 @function vary-get-map($key, $entity: $vary-loop-entity, $map: $vary-loop-map) {
   $entity-map: map-get($map, $entity);
 
